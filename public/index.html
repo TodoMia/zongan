@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;">
+<head>
+    <meta charset="utf-8"/>
+    <script>
+        // 不兼容 performance.timing 的浏览器
+        window.pageStartTime = Date.now()
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="renderer" content="webkit"/>
+
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0" /> -->
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico" /> -->
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+        //自适应代码
+        function rePosition() {
+            var width =
+                window.innerWidth ||
+                document.documentElement.clientWidth ||
+                document.body.clientWidth;
+            var ratio = width / 640;
+            if (width <= 640) {
+                document.getElementsByTagName("html")[0].style.fontSize =
+                    100 * ratio + "px";
+            } else {
+                document.getElementsByTagName("html")[0].style.fontSize = "100px";
+            }
+        }
+
+        rePosition();
+        window.onresize = function () {
+            rePosition();
+        };
+
+    </script>
+</head>
+<body style="margin: 0;">
+<noscript>
+    <strong
+    >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+    >
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+<script type="text/javascript">
+    // 首屏屏结束时间
+    window.firstPaint = Date.now()
+
+</script>
+</html>
+
+<style>
+    html {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+</style>

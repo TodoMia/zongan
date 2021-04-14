@@ -1,0 +1,43 @@
+#egg-inset {
+  .egg-01 {
+    left: 16%;
+    bottom: 40%;
+    -webkit-animation: swing 2s 0.4s ease both infinite;
+    -moz-animation: swing 2s 0.4s ease both infinite;
+  }
+  .egg-02 {
+    left: 43%;
+    bottom: 40%;
+    -webkit-animation: swing 2s 0.8s ease both infinite;
+    -moz-animation: swing 2s 1s ease both infinite;
+  }
+  .egg-03 {
+    left: 70%;
+    bottom: 40%;
+    -webkit-animation: swing 2s 0.7s ease both infinite;
+    -moz-animation: swing 2s 1s ease both infinite;
+  }
+  .egg-04 {
+    left: 16%;
+    bottom: 10%;
+    -webkit-animation: swing 2s 0.3s ease both infinite;
+    -moz-animation: swing 2s 1s ease both infinite;
+  }
+  .egg-05 {
+    left: 43%;
+    bottom: 10%;
+    -webkit-animation: swing 2s 0.9s ease both infinite;
+    -moz-animation: swing 2s 1s ease both infinite;
+  }
+  .egg-06 {
+    left: 70%;
+    bottom: 10%;
+    -webkit-animation: swing 2s 0.1s ease both infinite;
+    -moz-animation: swing 2s 1s ease both infinite;
+  }
+
+  .paused {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+}

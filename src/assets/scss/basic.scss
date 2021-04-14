@@ -1,0 +1,24 @@
+.clear {
+  &::after {
+    content: ".";
+    display: none;
+    clear: both;
+  }
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+

@@ -1,0 +1,343 @@
+/* -----------------------  转盘 --------------------------- */
+#turn-table-inset {
+  display: none;
+  position: relative;
+  /* position: fixed; */
+  z-index: 1;
+}
+#turn-table {
+  display: none;
+  position: fixed;
+  z-index: 1;
+}
+.pointer {
+  position: absolute;
+  z-index: 250;
+  width: 32%;
+  top: 30%;
+  left: 34%;
+}
+.pointer img {
+  display: block;
+}
+
+.bao {
+  width: 10%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  opacity: 0;
+  margin-top: -1.2rem;
+}
+.active {
+  -webkit-animation: top2Bottom 5s linear;
+  animation: top2Bottom 5s linear;
+}
+.pointer.turn .turn-real {
+  animation: around 3s linear infinite;
+  -webkit-animation: around 3s linear infinite;
+  animation-fill-mode: forwards;
+}
+@-moz-keyframes top2Bottom {
+  from {
+    opacity: 0.6;
+    -webkit-transform: translate(0) rotate(-30deg);
+    transform: translate(0) rotate(-30deg);
+  }
+  to {
+    opacity: 0.1;
+    -webkit-transform: translate(1920px, 3000px) rotate(-20deg);
+    transform: translate(1920px, 3000px) rotate(-20deg);
+  }
+}
+@keyframes top2Bottom {
+  from {
+    opacity: 0.6;
+    -webkit-transform: translate(0) rotate(-30deg);
+    transform: translate(0) rotate(-30deg);
+  }
+  to {
+    opacity: 0.1;
+    -webkit-transform: translate(1920px, 3000px) rotate(-20deg);
+    transform: translate(1920px, 3000px) rotate(-20deg);
+  }
+}
+.hongbao {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: -1rem;
+  width: 200%;
+  height: 160%;
+  overflow: hidden;
+}
+@keyframes around {
+  0% {
+    transform: rotateZ(-0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes around {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@keyframes around1 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  33.3% {
+    transform: rotateZ(120deg);
+  }
+  66.6% {
+    transform: rotateZ(240deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes around1 {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  33.3% {
+    -webkit-transform: rotateZ(120deg);
+  }
+  66.6% {
+    -webkit-transform: rotateZ(240deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@keyframes around2 {
+  0% {
+    transform: rotateZ(-120deg);
+  }
+  33.3% {
+    transform: rotateZ(0deg);
+  }
+  66.6% {
+    transform: rotateZ(120deg);
+  }
+  100% {
+    transform: rotateZ(240deg);
+  }
+}
+@-webkit-keyframes around2 {
+  0% {
+    -webkit-transform: rotateZ(-120deg);
+  }
+  33.3% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  66.6% {
+    -webkit-transform: rotateZ(120deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(240deg);
+  }
+}
+@keyframes around3 {
+  0% {
+    transform: rotateZ(-240deg);
+  }
+  33.3% {
+    transform: rotateZ(-120deg);
+  }
+  66.6% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(120deg);
+  }
+}
+@-webkit-keyframes around3 {
+  0% {
+    -webkit-transform: rotateZ(-240deg);
+  }
+  33.3% {
+    -webkit-transform: rotateZ(-120deg);
+  }
+  66.6% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(120deg);
+  }
+}
+/* ------------- 砸金蛋----------------- */
+
+.egg-place-inset {
+  position: relative;
+  width: 100%;
+}
+.egg-place {
+  position: fixed;
+  width: 100%;
+}
+.black-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 250;
+}
+.absolute-egg {
+  position: relative;
+  top: 25%;
+}
+.absolute-egg img {
+  width: 100%;
+}
+.absolute-egg-inset {
+  position: relative;
+}
+.absolute-egg-inset img {
+  width: 100%;
+}
+.egg {
+  position: relative;
+}
+.open .egg-break {
+  position: absolute;
+  bottom: 0;
+  left: -70%;
+  width: 275%;
+}
+.paused.egg-inner {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.hammer,
+.egg-break {
+  display: none;
+}
+.open .hammer {
+  display: block;
+  position: relative;
+  bottom: 0.8rem;
+  left: 80%;
+  width: 100%;
+  animation: hammer 0.5s alternate;
+}
+.exam {
+  position: absolute;
+  right: -2%;
+  top: 25%;
+  width: 20%;
+  -webkit-animation: hammer 0.5s infinite;
+  animation: hammer 0.5s infinite;
+  transform-origin: bottom left;
+  -webkit-transform-origin: bottom right;
+}
+.egg-inner {
+  position: absolute;
+  width: 15%;
+}
+
+.black-mask {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.red-packet-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 250;
+}
+.close-button,
+.button {
+  position: absolute;
+}
+.egg-01 {
+  left: 20%;
+  bottom: 42%;
+  -webkit-animation: swing 2s 0.4s ease both infinite;
+  -moz-animation: swing 2s 0.4s ease both infinite;
+}
+.egg-02 {
+  left: 42%;
+  bottom: 42%;
+  -webkit-animation: swing 2s 0.8s ease both infinite;
+  -moz-animation: swing 2s 1s ease both infinite;
+}
+.egg-03 {
+  left: 65%;
+  bottom: 42%;
+  -webkit-animation: swing 2s 0.7s ease both infinite;
+  -moz-animation: swing 2s 1s ease both infinite;
+}
+.egg-04 {
+  left: 20%;
+  bottom: 12%;
+  -webkit-animation: swing 2s 0.3s ease both infinite;
+  -moz-animation: swing 2s 1s ease both infinite;
+}
+.egg-05 {
+  left: 42%;
+  bottom: 12%;
+  -webkit-animation: swing 2s 0.9s ease both infinite;
+  -moz-animation: swing 2s 1s ease both infinite;
+}
+.egg-06 {
+  left: 65%;
+  bottom: 12%;
+  -webkit-animation: swing 2s 0.1s ease both infinite;
+  -moz-animation: swing 2s 1s ease both infinite;
+}
+
+@keyframes swing {
+  5% {
+    -webkit-transform: rotate(10deg);
+  }
+  10% {
+    -webkit-transform: rotate(-8deg);
+  }
+  15% {
+    -webkit-transform: rotate(5deg);
+  }
+  20% {
+    -webkit-transform: rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes hammer {
+  50% {
+    transform: rotate(35deg);
+  }
+}
+@keyframes swing {
+  5% {
+    -webkit-transform: rotate(10deg);
+  }
+  10% {
+    -webkit-transform: rotate(-8deg);
+  }
+  15% {
+    -webkit-transform: rotate(5deg);
+  }
+  20% {
+    -webkit-transform: rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
